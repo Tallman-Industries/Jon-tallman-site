@@ -25,6 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jon-tallman-site.fly.dev"),
   title: "Jon Tallman — Product, Strategy, Fractional",
   description: RESUME_DATA.intro,
   openGraph: {
