@@ -1,26 +1,18 @@
 import type { Metadata } from "next";
-import { Newsreader, Inter_Tight, JetBrains_Mono } from "next/font/google";
+import { Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { RESUME_DATA } from "@/data/resume";
 
-const newsreader = Newsreader({
+const inter = Inter({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-newsreader",
+  variable: "--font-inter",
   display: "swap",
 });
 
-const interTight = Inter_Tight({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter-tight",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
-  variable: "--font-jetbrains-mono",
+  variable: "--font-plex-mono",
   display: "swap",
 });
 
@@ -42,9 +34,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${interTight.variable} ${jetbrainsMono.variable}`}
+      className={`${inter.variable} ${plexMono.variable}`}
     >
-      <body data-theme="editorial">{children}</body>
+      <body data-theme="document">{children}</body>
     </html>
   );
 }

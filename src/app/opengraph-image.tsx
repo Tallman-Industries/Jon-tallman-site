@@ -8,16 +8,16 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
-  const [italic, regular, medium] = await Promise.all([
-    readFile(path.join(process.cwd(), "src/assets/Newsreader-Italic.ttf")),
-    readFile(path.join(process.cwd(), "src/assets/Newsreader-Regular.ttf")),
-    readFile(path.join(process.cwd(), "src/assets/Newsreader-Medium.ttf")),
+  const [regular, semibold] = await Promise.all([
+    readFile(path.join(process.cwd(), "src/assets/Inter-Regular.woff")),
+    readFile(path.join(process.cwd(), "src/assets/Inter-SemiBold.woff")),
   ]);
 
-  const bg = "#f3ece0";
-  const ink = "#1a1712";
-  const inkMute = "#8a8170";
-  const accent = "#b35a2c";
+  const bg = "#fafaf7";
+  const ink = "#0c0c0c";
+  const inkMute = "#7a7a78";
+  const accent = "#1f4934";
+  const rule = "#d8d8d2";
 
   return new ImageResponse(
     (
@@ -30,7 +30,7 @@ export default async function OpenGraphImage() {
           justifyContent: "space-between",
           background: bg,
           padding: "72px 80px",
-          fontFamily: "Newsreader",
+          fontFamily: "Inter",
           color: ink,
         }}
       >
@@ -39,9 +39,9 @@ export default async function OpenGraphImage() {
             display: "flex",
             alignItems: "center",
             gap: 14,
-            fontFamily: "Newsreader",
+            fontFamily: "Inter",
             fontSize: 22,
-            fontWeight: 500,
+            fontWeight: 600,
             letterSpacing: "-0.01em",
           }}
         >
@@ -54,7 +54,7 @@ export default async function OpenGraphImage() {
             }}
           />
           <span>Jon Tallman</span>
-          <span style={{ color: inkMute, fontSize: 18, marginLeft: 4 }}>
+          <span style={{ color: inkMute, fontSize: 18, marginLeft: 4, fontWeight: 400 }}>
             / product &amp; strategy
           </span>
         </div>
@@ -63,25 +63,23 @@ export default async function OpenGraphImage() {
           style={{
             display: "flex",
             flexDirection: "column",
-            fontFamily: "Newsreader",
-            fontWeight: 500,
-            fontSize: 104,
-            lineHeight: 1.02,
-            letterSpacing: "-0.03em",
+            fontFamily: "Inter",
+            fontWeight: 600,
+            fontSize: 88,
+            lineHeight: 1.08,
+            letterSpacing: "-0.025em",
           }}
         >
-          <div style={{ display: "flex" }}>
-            <span>Product leader,&nbsp;</span>
+          <div style={{ display: "flex", gap: 28 }}>
+            <span>Product leader,</span>
             <span
               style={{
-                fontStyle: "italic",
                 color: accent,
-                fontWeight: 400,
+                fontWeight: 600,
               }}
             >
-              founder
+              founder,
             </span>
-            <span>,</span>
           </div>
           <div style={{ display: "flex" }}>and fractional operator.</div>
         </div>
@@ -91,14 +89,14 @@ export default async function OpenGraphImage() {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
-            borderTop: `1px solid #d6ccba`,
+            borderTop: `1px solid ${rule}`,
             paddingTop: 28,
             fontSize: 20,
             color: inkMute,
           }}
         >
           <span>Denver, Colorado · AI · Media · Ad-tech</span>
-          <span style={{ color: ink, fontWeight: 500 }}>
+          <span style={{ color: ink, fontWeight: 600 }}>
             Fractional &amp; advisory
           </span>
         </div>
@@ -108,22 +106,16 @@ export default async function OpenGraphImage() {
       ...size,
       fonts: [
         {
-          name: "Newsreader",
+          name: "Inter",
           data: regular as unknown as ArrayBuffer,
           style: "normal",
           weight: 400,
         },
         {
-          name: "Newsreader",
-          data: medium as unknown as ArrayBuffer,
+          name: "Inter",
+          data: semibold as unknown as ArrayBuffer,
           style: "normal",
-          weight: 500,
-        },
-        {
-          name: "Newsreader",
-          data: italic as unknown as ArrayBuffer,
-          style: "italic",
-          weight: 400,
+          weight: 600,
         },
       ],
     },
