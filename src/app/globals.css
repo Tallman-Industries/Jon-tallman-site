@@ -1,5 +1,5 @@
 /* ============================================================
-   JON TALLMAN — RESUME SITE (editorial theme)
+   JON TALLMAN — RESUME SITE (document theme)
    ============================================================ */
 
 :root {
@@ -9,18 +9,18 @@
   --r-md: 8px;
   --r-lg: 16px;
 
-  --bg: #f3ece0;
-  --paper: #ede4d3;
-  --ink: #1a1712;
-  --ink-soft: #4a4338;
-  --ink-mute: #8a8170;
-  --rule: #d6ccba;
-  --accent: oklch(0.56 0.12 38);
-  --accent-soft: oklch(0.92 0.04 60);
+  --bg: #fafaf7;
+  --paper: #f0f0eb;
+  --ink: #0c0c0c;
+  --ink-soft: #3a3a3a;
+  --ink-mute: #7a7a78;
+  --rule: #d8d8d2;
+  --accent: #1f4934;
+  --accent-soft: #e2ebe5;
 
-  --display: var(--font-newsreader), "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
-  --sans: var(--font-inter-tight), "Geist", ui-sans-serif, system-ui, sans-serif;
-  --mono: var(--font-jetbrains-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,10 +55,10 @@ img { max-width: 100%; display: block; }
 .brand {
   font-family: var(--display);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
-.brand-sub { color: var(--ink-mute); margin-left: 8px; font-size: 0.8em; }
+.brand-sub { color: var(--ink-mute); margin-left: 8px; font-size: 0.8em; font-weight: 400; }
 .nav-links {
   display: flex; gap: 28px;
   font-family: var(--sans);
@@ -116,16 +116,16 @@ img { max-width: 100%; display: block; }
   font-family: var(--display);
   font-size: clamp(44px, 6.2vw, 84px);
   line-height: 0.98;
-  letter-spacing: -0.025em;
-  font-weight: 450;
+  letter-spacing: -0.03em;
+  font-weight: 600;
   color: var(--ink);
   text-wrap: balance;
   margin-bottom: 28px;
 }
 .hero h1 em {
-  font-style: italic;
+  font-style: normal;
   color: var(--accent);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .hero-lede {
@@ -210,13 +210,13 @@ section.block:last-of-type { border-bottom: 0; }
 .section-title {
   font-family: var(--display);
   font-size: clamp(28px, 3.2vw, 40px);
-  font-weight: 450;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   color: var(--ink);
   text-wrap: balance;
 }
-.section-title em { color: var(--accent); font-style: italic; }
+.section-title em { color: var(--accent); font-style: normal; font-weight: 600; }
 
 /* -------- ABOUT -------- */
 .about-body {
@@ -226,8 +226,8 @@ section.block:last-of-type { border-bottom: 0; }
 .about-prose {
   max-width: 68ch;
   font-family: var(--display);
-  font-size: 22px;
-  line-height: 1.45;
+  font-size: 20px;
+  line-height: 1.5;
   color: var(--ink);
   text-wrap: pretty;
 }
@@ -245,11 +245,13 @@ section.block:last-of-type { border-bottom: 0; }
 .stat-value {
   font-family: var(--display);
   font-size: 44px;
-  font-weight: 450;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
   color: var(--ink);
   line-height: 1;
   margin-bottom: 8px;
+  font-feature-settings: "tnum", "ss01", "cv11";
+  font-variant-numeric: tabular-nums;
 }
 .stat-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute); }
 
@@ -278,14 +280,15 @@ section.block:last-of-type { border-bottom: 0; }
   color: var(--ink-mute);
   text-transform: uppercase;
   padding-top: 6px;
+  font-variant-numeric: tabular-nums;
 }
 .exp-period .dim { opacity: 0.6; }
 .exp-role {
   font-family: var(--display);
   font-size: 22px;
   line-height: 1.2;
-  font-weight: 450;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   color: var(--ink);
   margin-bottom: 4px;
   text-wrap: balance;
@@ -358,7 +361,7 @@ section.block:last-of-type { border-bottom: 0; }
   display: flex; align-items: center; gap: 8px;
 }
 .lead-role {
-  font-family: var(--display); font-size: 28px; line-height: 1.1; letter-spacing: -0.01em; font-weight: 450;
+  font-family: var(--display); font-size: 28px; line-height: 1.1; letter-spacing: -0.015em; font-weight: 600;
   color: var(--ink); margin-bottom: 6px; text-wrap: balance;
 }
 .lead-org { font-family: var(--sans); font-size: 14px; color: var(--ink-soft); margin-bottom: 14px; }
@@ -385,10 +388,10 @@ section.block:last-of-type { border-bottom: 0; }
 .project-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
 .project-title {
   font-family: var(--display);
-  font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; font-weight: 450;
+  font-size: 22px; line-height: 1.2; letter-spacing: -0.015em; font-weight: 600;
   color: var(--ink); text-wrap: balance;
 }
-.project-year { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-mute); text-transform: uppercase; white-space: nowrap; }
+.project-year { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: var(--ink-mute); text-transform: uppercase; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .project-org { font-family: var(--sans); font-size: 13px; color: var(--ink-soft); margin-top: -8px; }
 .project-summary { font-family: var(--sans); font-size: 15px; line-height: 1.55; color: var(--ink); text-wrap: pretty; }
 .project-impact {
@@ -418,7 +421,7 @@ section.block:last-of-type { border-bottom: 0; }
 }
 .skill-group ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .skill-group li {
-  font-family: var(--display); font-size: 20px; line-height: 1.25; color: var(--ink); font-weight: 450; letter-spacing: -0.01em;
+  font-family: var(--display); font-size: 18px; line-height: 1.3; color: var(--ink); font-weight: 600; letter-spacing: -0.015em;
 }
 
 /* -------- CONTACT -------- */
@@ -430,10 +433,10 @@ section.block:last-of-type { border-bottom: 0; }
 @media (max-width: 720px) { .contact-grid { grid-template-columns: 1fr; gap: 32px; } }
 .contact-hed {
   font-family: var(--display);
-  font-size: clamp(36px, 5.4vw, 64px); line-height: 1; letter-spacing: -0.025em; font-weight: 450;
+  font-size: clamp(36px, 5.4vw, 64px); line-height: 1; letter-spacing: -0.03em; font-weight: 600;
   color: var(--ink); text-wrap: balance;
 }
-.contact-hed em { color: var(--accent); font-style: italic; }
+.contact-hed em { color: var(--accent); font-style: normal; font-weight: 600; }
 .contact-sub { font-family: var(--sans); font-size: 16px; color: var(--ink-soft); margin-top: 16px; max-width: 50ch; text-wrap: pretty; }
 .contact-ctas { display: flex; flex-direction: column; gap: 10px; }
 

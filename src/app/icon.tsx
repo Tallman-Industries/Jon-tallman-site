@@ -7,8 +7,8 @@ export const size = { width: 64, height: 64 };
 export const contentType = "image/png";
 
 export default async function Icon() {
-  const italic = await readFile(
-    path.join(process.cwd(), "src/assets/Newsreader-Italic.ttf"),
+  const interBold = await readFile(
+    path.join(process.cwd(), "src/assets/Inter-Bold.woff"),
   );
 
   return new ImageResponse(
@@ -21,13 +21,14 @@ export default async function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#f3d9ba",
-          fontFamily: "Newsreader",
-          fontStyle: "italic",
-          fontSize: 56,
-          color: "#b35a2c",
-          letterSpacing: "-0.03em",
+          fontFamily: "Inter",
+          fontStyle: "normal",
+          fontWeight: 700,
+          fontSize: 52,
+          color: "#1f4934",
+          letterSpacing: "-0.04em",
           lineHeight: 1,
-          paddingBottom: 4,
+          paddingBottom: 2,
         }}
       >
         J
@@ -37,10 +38,10 @@ export default async function Icon() {
       ...size,
       fonts: [
         {
-          name: "Newsreader",
-          data: italic as unknown as ArrayBuffer,
-          style: "italic",
-          weight: 500,
+          name: "Inter",
+          data: interBold as unknown as ArrayBuffer,
+          style: "normal",
+          weight: 700,
         },
       ],
     },
